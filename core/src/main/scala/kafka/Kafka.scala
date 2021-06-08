@@ -109,7 +109,7 @@ object Kafka extends Logging {
       try server.startup()
       catch {
         case _: Throwable =>
-          // KafkaServer.startup() calls shutdown() in case of exceptions, so we invoke `exit` to set the status code
+          // KafkaServer.startup()gradle -v calls shutdown() in case of exceptions, so we invoke `exit` to set the status code
           fatal("Exiting Kafka.")
           Exit.exit(1)
       }
