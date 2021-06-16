@@ -531,6 +531,7 @@ public class NetworkClient implements KafkaClient {
                 send,
                 now);
         this.inFlightRequests.add(inFlightRequest);
+        // 只是把请求ID发送给select
         selector.send(new NetworkSend(clientRequest.destination(), send));
     }
 
